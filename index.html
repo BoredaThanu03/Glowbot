@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowbot -Skincare</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #d5bdaf;
+            --secondary-color: #e3d5ca;
+            --background-color: #edede9;
+            --text-color: #333;
+            --btn-color: #d6ccc2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            background: var(--secondary-color);
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--btn-color);
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .video-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            width: 700px;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .clients {
+            text-align: center;
+            padding: 50px 0;
+            background: var(--secondary-color);
+        }
+
+        .clients h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .client-logos img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .chat-toggle {
+            background: #D5BDAF;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .chatbox {
+            display: none;
+            width: 250px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            padding: 10px;
+        }
+        
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .chat-messages {
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        
+        input {
+            width: calc(100% - 20px);
+            padding: 5px;
+        }
+        
+        button {
+            background: #D6CCC2;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .hero-image img {
+                width: 100%;
+            }
+            .video-container iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://i.ibb.co/DxML9GM/Screenshot-2025-03-24-at-7-46-19-PM.png" alt="Glowbot Logo" class="logo">        
+            <h1>GLOWBOT</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <section class="video-section">
+        <h2>Let's know the skin Type!!</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/9lpNctzBqa8?autoplay=1&mute=1&loop=1&playlist=9lpNctzBqa8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="shop-by-skin">
+        <h2>Find the Right Skincare for You by exploring....</h2>
+        <p>Select the your skin type for you </p>
+        <div class="skin-types">
+            <div class="skin-card">
+                <a href="https://ibb.co/vvzmgMSp"><img src="https://i.ibb.co/WpKFqRLZ/Screenshot-2025-03-24-at-8-50-34-PM.png" alt="Screenshot-2025-03-24-at-8-50-34-PM" border="0"></a>
+                <a href="/combo.html">Combination skin</a>
+            </div>
+            <div class="skin-card">
+                <a href="https://ibb.co/twXQT3HS"><img src="https://i.ibb.co/vCYV6Dcb/Screenshot-2025-03-24-at-8-39-08-PM.png" alt="Screenshot-2025-03-24-at-8-39-08-PM" border="0"></a>
+                <a href="/oilyy.html">Oily skin</a>
+            </div>
+            <div class="skin-card">
+                <a href="https://ibb.co/Z1JfLWrj"><img src="https://i.ibb.co/7NzSY2Df/Screenshot-2025-03-24-at-8-46-08-PM.png" alt="Screenshot-2025-03-24-at-8-46-08-PM" border="0"></a>
+                <a href="/dryy.html">Dry skin</a>
+            </div>
+            <div class="skin-card">
+                <a href="https://ibb.co/1G8BJP6j"><img src="https://i.ibb.co/RTzt4syd/Screenshot-2025-03-24-at-8-48-07-PM.png" alt="Screenshot-2025-03-24-at-8-48-07-PM" border="0"></a>
+                <a href="/sensitive.html">sensitive skin</a>
+            </div>
+            
+        </div>
+    </section>
+    
+    
+    <style>
+        .shop-by-skin {
+            text-align: center;
+            padding: 50px 0;
+            background: var(--secondary-color);
+        }
+    
+        .shop-by-skin h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+    
+        .shop-by-skin p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    
+        .skin-types {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        .skin-card {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+    
+        .skin-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    
+        .skin-card p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+    
+        .skin-card:hover {
+            transform: scale(1.05);
+        }
+    
+        @media (max-width: 768px) {
+            .skin-types {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2><em>Your Opinion!!??</em></h2>
+                <form action="#" method="POST">
+                    <form class="vertical-form" action="https://submit-form.com/dvWxyCTRw"></form>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" gender="gender" required>
+
+                    <label for="address">Address</label>
+                    <textarea id="feedback" name="feedback" rows="2" required></textarea>
+    
+                    <label for="feedback">Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="contact-image">
+                <img src="https://i.ibb.co/7xcpHNZw/Screenshot-2025-03-24-at-7-24-59-PM.png" alt="AI Skincare Assistance">
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .contact-section {
+            background: var(--secondary-color);
+            padding: 50px 0;
+            text-align: center;
+        }
+    
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            gap: 30px;
+        }
+    
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+    
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+    
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        .contact-form button {
+            background: var(--btn-color);
+            color: var(--text-color);
+            border: none;
+            padding: 12px;
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    
+        .contact-form button:hover {
+            background: var(--primary-color);
+        }
+    
+        .contact-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .contact-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .questionnaire {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background: #D6CCC2;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        #quiz-results {
+            text-align: center;
+            padding: 15px;
+            background: #E3D5CA;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 300px;
+        }
+        
+    
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
+
+   
+</body>
+<div class="chatbot">
+    <button class="chat-toggle" onclick="toggleChat()">💬 Chat</button>
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            <span>Glowbot AI</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+       
+            
+            
+        
+        <div class="chat-messages" id="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script>
+    function toggleChat() {
+        var chatbox = document.getElementById("chatbox");
+        if (chatbox.style.display === "none" || chatbox.style.display === "") {
+            chatbox.style.display = "block";
+        } else {
+            chatbox.style.display = "none";
+        }
+    }
+
+    function sendMessage() {
+        var userInput = document.getElementById("user-input");
+        var chatMessages = document.getElementById("chat-messages");
+
+        if (userInput.value.trim() === "") return;
+
+        var userMessage = document.createElement("p");
+        userMessage.textContent = "You: " + userInput.value;
+        chatMessages.appendChild(userMessage);
+
+        var botResponse = document.createElement("p");
+        botResponse.textContent = "Glowbot AI: Thank you for your message!";
+        botResponse.style.fontWeight = "bold";
+        botResponse.style.color = "#D5BDAF";
+        chatMessages.appendChild(botResponse);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        userInput.value = "";
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    }
+</script>
+
+
+</html>

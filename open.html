@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowbot -Skincare</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #d5bdaf;
+            --secondary-color: #e3d5ca;
+            --background-color: #edede9;
+            --text-color: #333;
+            --btn-color: #b5885a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #edede9;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            background: var(--secondary-color);
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--btn-color);
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .video-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .video-section h2 {
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            width: 700px;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .clients {
+            text-align: center;
+            padding: 50px 0;
+            background: var(--secondary-color);
+        }
+
+        .clients h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .client-logos img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .chat-toggle {
+            background: #D5BDAF;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .chatbox {
+            display: none;
+            width: 250px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            padding: 10px;
+        }
+        
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .chat-messages {
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        
+        input {
+            width: calc(100% - 20px);
+            padding: 5px;
+        }
+        
+        button {
+            background: #D6CCC2;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .hero-image img {
+                width: 100%;
+            }
+            .video-container iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://i.ibb.co/DxML9GM/Screenshot-2025-03-24-at-7-46-19-PM.png" alt="Glowbot Logo" class="logo">        
+            <h1>GLOWBOT</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1> Skincare for You</h1>
+                <p>Discover your skin type and get personalized product recommendations with our advanced analysis.</p>
+                <a href="/chat.html" class="btn">Analyze My Skin</a>
+            </div>
+            <div class="hero-image">
+                <a href="https://ibb.co/GQwcRrnP"><img src="https://i.ibb.co/5hDBLJGc/Screenshot-2025-03-24-at-8-50-12-PM.png" alt="Screenshot-2025-03-24-at-8-50-12-PM" border="0"></a>
+            </div>
+        </div>
+    </section>
+    </body>
+    </html>

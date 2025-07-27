@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowbot Skincare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5EBE0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #D6CCC2;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .cart {
+            position: relative;
+            cursor: pointer;
+        }
+        .cart span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product span {
+            font-weight: bold;
+            color: #D5BDAF;
+        }
+        .product button {
+            background: #D6CCC2;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .cart-section {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            background: white;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+        }
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .cart-total {
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .buy-now {
+            background: #D5BDAF;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> <img src="https://i.ibb.co/DxML9GM/Screenshot-2025-03-24-at-7-46-19-PM.png" alt="Glowbot Logo"> </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="cart" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+    <section class="product-list">
+        <div class="product">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/xtmNCLXZ/hack4.jpg" alt="hack4" border="0"></a>
+            <h3>foxtale Hydrating Moisturizer</h3>
+            <p>For all skin types</p>
+            <span>Rs.:217/-</span>
+            <button onclick="addToCart('foxtale Hydrating Moisturizer',217)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/LdLyGCcw/hack8.jpg" alt="hack8" border="0"></a>
+        <h3>Minimalisit SPF 50 Sunscreen</h3>
+        <p>Broad Spectrum Protection</p>
+        <span>Rs.:357/-</span>
+        <button onclick="addToCart('minimalisit SPF 50 Sunscreen', 357)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/hR7gCwpq"><img src="https://i.ibb.co/svmgtzLB/hack2.jpg" alt="hack2" border="0"></a>
+        <h3>DermaTouch Deep Cleanser</h3>
+        <p>Gentle & Effective</p>
+        <span>Rs.:145/-</span>
+        <button onclick="addToCart('Glowbot Deep Cleanser', 145)">Add to Cart</button>
+    </div>
+    </section>
+    <section class="product-list">
+        <div class="product">
+            <a href="https://ibb.co/B2y9jzC9"><img src="https://i.ibb.co/d4PR6W5R/hqack5.jpg" alt="hqack5" border="0"></a>
+            <h3>ponds Hydrating Moisturizer</h3>
+            <p>For all skin types</p>
+            <span>Rs.:141/-</span>
+            <button onclick="addToCart('Glowbot Hydrating Moisturizer', 141)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/Vp2BWK6N/hack11.jpg" alt="hack11" border="0"></a>
+        <h3>Derma SPF 50 Sunscreen</h3>
+        <p>Broad Spectrum Protection</p>
+        <span>Rs.:278/-</span>
+        <button onclick="addToCart('Derma SPF 50 Sunscreen', 278)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/7JvPrjRf"><img src="https://i.ibb.co/DD4hwz8J/hack6.jpg" alt="hack6" border="0"></a>
+        <h3>Dot&key Deep Cleanser</h3>
+        <p>Gentle & Effective</p>
+        <span>Rs.:214/-</span>
+        <button onclick="addToCart('Glowbot Deep Cleanser', 214)">Add to Cart</button>
+    </div>
+    </section>
+    <section class="product-list">
+        <div class="product">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/YBZX4ffR/15.jpg" alt="15" border="0"></a>
+            <h3>Foxtale Hydrating Moisturizer</h3>
+            <p>For all skin types</p>
+            <span>Rs.:189/-</span>
+            <button onclick="addToCart('Foxtale Hydrating Moisturizer', 189)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/mrxBt68P"><img src="https://i.ibb.co/SDLx0RrZ/hack12.jpg" alt="hack12" border="0"></a>
+        <h3>DermaTouch SPF 50 Sunscreen</h3>
+        <p>Broad Spectrum Protection</p>
+        <span>Rs.190/-</span>
+        <button onclick="addToCart('DermaTouch SPF 50 Sunscreen', 190)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://i.ibb.co/3mtLhych/hack7.jpg" alt="hack7" border="0">
+        <h3>PS Goodness Deep Cleanser</h3>
+        <p>Gentle & Effective</p>
+        <span>Rs.163/-</span>
+        <button onclick="addToCart('PS Goodness Deep Cleanser', 163)">Add to Cart</button>
+    </div>
+    </section>
+    <section class="product-list">
+        <div class="product">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/sTvk00L/16.jpg" alt="16" border="0"></a>
+            <h3>minimalist Hydrating Moisturizer</h3>
+            <p>For all skin types</p>
+            <span>Rs.:190/-</span>
+            <button onclick="addToCart('minimalist  Hydrating Moisturizer', 190)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/0jqhwZBh/hack13.jpg" alt="hack13" border="0"></a>
+        <h3>Dot&Key SPF 50 Sunscreen</h3>
+        <p>Broad Spectrum Protection</p>
+        <span>Rs.:284/-</span>
+        <button onclick="addToCart('Dot&Key SPF 50 Sunscreen', 284)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/jvcsPxtP/31.png" alt="31" border="0"></a>
+        <h3>Cetaphil Deep Cleanser</h3>
+        <p>Gentle & Effective</p>
+        <span>Rs:450/-</span>
+        <button onclick="addToCart('Cetaphil Deep Cleanser', 450)">Add to Cart</button>
+    </div>
+    </section>
+    <section class="product-list">
+        <div class="product">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/jkv2QBj0/17.jpg" alt="17" border="0"></a>
+            <h3>DermaDoc Hydrating Moisturizer</h3>
+            <p>For all skin types</p>
+            <span>Rs.:159/-</span>
+            <button onclick="addToCart('DermaDoc Hydrating Moisturizer', 159)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/gLnpmd6B/hack14.jpg" alt="hack14" border="0"></a>
+        <h3>DR.Sheths SPF 50 Sunscreen</h3>
+        <p>Broad Spectrum Protection</p>
+        <span>Rs.:284/-</span>
+        <button onclick="addToCart('DR.Sheths SPF 50 Sunscreen', 284)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/RpLPBDRX/33.png" alt="33" border="0"></a>
+        <h3>dermastry Deep Cleanser</h3>
+        <p>Gentle & Effective</p>
+        <span>Rs.:600/-</span>
+        <button onclick="addToCart('dermastry Deep Cleanser', 600)">Add to Cart</button>
+    </div>
+    </section>
+    <div class="cart-section" id="cart-section">
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Total: $0.00</div>
+        <button class="buy-now" onclick="buyNow()">Buy Now</button>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+    
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            document.getElementById('cart-count').innerText = cart.length;
+            updateCart();
+        }
+        
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            let totalPriceDiv = document.getElementById('cart-total');
+            
+            cartItems.innerHTML = ''; 
+            let totalPrice = 0;
+        
+            cart.forEach(item => {
+                let div = document.createElement('div');
+                div.innerHTML = `<span>${item.name}</span> <span>Rs.${item.price.toFixed(2)}</span>`;
+                cartItems.appendChild(div);
+                totalPrice += item.price;
+            });
+            
+            totalPriceDiv.innerText = `Total: Rs.${totalPrice.toFixed(2)}`;
+        }
+        
+        function toggleCart() {
+            let cartSection = document.getElementById('cart-section');
+            cartSection.style.display = cartSection.style.display === 'flex' ? 'none' : 'flex';
+        }
+        
+        function buyNow() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Proceeding to checkout...');
+        }
+    </script>
+</body>
+</html>
